@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752689553350",
+    "project_id": "technology-4a740",
+    "storage_bucket": "technology-4a740.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752689553350:android:a230d9c3fb27c29c71dcc7",
+        "android_client_info": {
+          "package_name": "com.example.technologystore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6CCp7SFQDfSsqD0KXGZsoKnuKOwvDsIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
