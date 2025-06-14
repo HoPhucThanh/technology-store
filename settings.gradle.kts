@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "technology store"
 include(":app")
- 
+
