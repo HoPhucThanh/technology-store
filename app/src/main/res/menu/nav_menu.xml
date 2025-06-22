@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Trang chính" />
+
+        <item
+            android:id="@+id/nav_phone"
+            android:icon="@drawable/ic_phone"
+            android:title="Điện thoại" />
+
+        <item
+            android:id="@+id/nav_laptop"
+            android:icon="@drawable/ic_laptop"
+            android:title="Laptop" />
+
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="Liên hệ" />
+
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Thông tin" />
+
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_orders"
+            android:title="Đơn hàng của tôi" />
+
+    </group>
+
+</menu>

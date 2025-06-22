@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">technology store</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+
+    <string-array name="order_status_array">
+        <item>chờ xác nhận</item>
+        <item>đã xác nhận</item>
+        <item>đang giao</item>
+        <item>đã giao</item>
+        <item>đã hủy</item>
+    </string-array>
+
+
 </resources>
