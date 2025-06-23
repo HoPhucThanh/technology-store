@@ -3,7 +3,7 @@ package com.example.technologystore;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.*;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.technologystore.models.Product;
