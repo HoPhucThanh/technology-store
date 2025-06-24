@@ -42,7 +42,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         txtQuantity = findViewById(R.id.txtQuantity);
         btnAddToCart = findViewById(R.id.btnAddToCart);
 
-        product = (Product) getIntent().getSerializableExtra("product");
+        product = (Product) getIntent().getSerializableExtra("product"); // nhận product khi click vào sản phẩm( xử lý trong adapter)
 
         if (product != null) {
             getSupportActionBar().setTitle(product.getName());

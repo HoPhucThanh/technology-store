@@ -55,7 +55,7 @@ public class CartActivity extends AppCompatActivity {
 
         recyclerViewCart.setLayoutManager(new LinearLayoutManager(this));
         cartAdapter = new AdapterCartItem(this, cartItemList, txtTotal);
-        recyclerViewCart.setAdapter(cartAdapter);
+        recyclerViewCart.setAdapter(cartAdapter); // gắn adapter vào recylerview
 
         loadCartItems();
 
@@ -103,7 +103,7 @@ public class CartActivity extends AppCompatActivity {
 
     private void placeOrder(String method) {
         DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference("orders");
-        String orderId = ordersRef.push().getKey();  // ✅ order_id là String
+        String orderId = ordersRef.push().getKey();  // ✅ order_id là String( ngẫu nhiên)
         long total = (long) cartAdapter.calculateTotal();
         String createdAt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
 

@@ -39,6 +39,8 @@
         <activity android:name=".ManageProductsActivity" />
         <activity android:name=".AddProductActivity" />
         <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".RevenueReportActivity" />
+
 
 
 

@@ -25,7 +25,7 @@ import java.util.List;
 public class MyOrdersActivity extends AppCompatActivity {
     private RecyclerView recyclerOrders;
     private List<Order> orderList = new ArrayList<>();
-    private AdapterOrder orderAdapter; // ✅ đổi từ OrderAdapter -> AdapterOrder
+    private AdapterOrder orderAdapter;
     private String currentUserId;
 
     @Override
@@ -34,7 +34,7 @@ public class MyOrdersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_orders);
 
         Button btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(v -> finish());  // kết thúc activity, quay lại màn trước
+        btnBack.setOnClickListener(v -> finish());
 
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -43,7 +43,7 @@ public class MyOrdersActivity extends AppCompatActivity {
         recyclerOrders = findViewById(R.id.recyclerOrders);
         recyclerOrders.setLayoutManager(new LinearLayoutManager(this));
 
-        // ✅ dùng AdapterOrder thay vì OrderAdapter
+
         orderAdapter = new AdapterOrder(this, orderList);
         recyclerOrders.setAdapter(orderAdapter);
 

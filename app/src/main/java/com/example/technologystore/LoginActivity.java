@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (email.equals(dbEmail) && password.equals(dbPassword)) {
                         found = true;
 
-                        // Lấy user_id từ key node này
+                        // Lấy user_id nếu khơp
                         String userId = userSnap.getKey();
 
                         // Lưu userId vào SharedPreferences

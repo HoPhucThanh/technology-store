@@ -35,6 +35,15 @@
         android:layout_marginBottom="16dp" />
 
     <Button
+        android:id="@+id/btnRevenueReport"
+        android:text="📊 Thống kê doanh thu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9800"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <Button
         android:id="@+id/btnLogoutAdmin"
         android:text="🚪 Đăng xuất"
         android:layout_width="match_parent"

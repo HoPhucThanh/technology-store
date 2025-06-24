@@ -14,6 +14,12 @@ public class AdminDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
+        Button btnRevenueReport = findViewById(R.id.btnRevenueReport);
+        btnRevenueReport.setOnClickListener(v -> {
+            startActivity(new Intent(this, RevenueReportActivity.class));
+        });
+
+
         btnManageOrders = findViewById(R.id.btnManageOrders);
         btnManageProducts = findViewById(R.id.btnManageProducts);
         btnLogout = findViewById(R.id.btnLogoutAdmin);

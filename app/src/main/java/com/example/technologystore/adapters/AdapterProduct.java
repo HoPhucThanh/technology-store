@@ -50,7 +50,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductV
         Product product = productList.get(position);
 
         holder.txtName.setText(product.getName());
-        holder.itemView.setOnClickListener(v -> {
+        holder.itemView.setOnClickListener(v -> {    // bấm ảnh và điều hướng
             Intent intent = new Intent(context, ProductDetailActivity.class);
             intent.putExtra("product", product);
             context.startActivity(intent);

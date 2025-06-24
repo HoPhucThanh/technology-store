@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         btnBack = findViewById(R.id.btnBack); // Nút quay lại
 
-        databaseRef = FirebaseDatabase.getInstance().getReference("users");
+
 
         // Sự kiện nút đăng ký
         btnRegister.setOnClickListener(v -> registerUser());
@@ -51,10 +51,14 @@ public class RegisterActivity extends AppCompatActivity {
         String phone = edtPhone.getText().toString().trim();
         String address = edtAddress.getText().toString().trim();
 
-        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+        databaseRef = FirebaseDatabase.getInstance().getReference("users");
+
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || phone.isEmpty() || address.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
 
         databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -64,10 +68,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                 for (DataSnapshot userSnap : snapshot.getChildren()) {
                     String existingEmail = userSnap.child("email").getValue(String.class);
-                    String existingPassword = userSnap.child("password").getValue(String.class);
+                    //String existingPassword = userSnap.child("password").getValue(String.class);
                     String uidStr = userSnap.child("user_id").getValue(String.class);
 
-                    if (email.equals(existingEmail) && password.equals(existingPassword)) {
+                    if (email.equals(existingEmail)) {
                         emailExists = true;
                         break;
                     }
@@ -81,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if (emailExists) {
-                    Toast.makeText(RegisterActivity.this, "Email và mật khẩu đã tồn tại!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Email đã tồn tại!", Toast.LENGTH_SHORT).show();
                 } else {
                     String newUserId = String.valueOf(maxId + 1);
                     String createdAt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -93,10 +97,10 @@ public class RegisterActivity extends AppCompatActivity {
                     newUser.put("password", password);
                     newUser.put("phone", phone);
                     newUser.put("address", address);
-                    newUser.put("role", "user");
+                    newUser.put("role", "user"); // mặc định khi đki là user
                     newUser.put("created_at", createdAt);
 
-                    databaseRef.child(newUserId).setValue(newUser)
+                    databaseRef.child(newUserId).setValue(newUser) // đẩy dữ liệu lên firebase
                             .addOnSuccessListener(unused -> {
                                 Toast.makeText(RegisterActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
